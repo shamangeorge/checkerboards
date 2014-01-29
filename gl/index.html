@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Checkerboard</title>
+
+    <script type="text/javascript" src="./js/gl-matrix.js"></script>
+    <script type="text/javascript" src="./js/webgl-utils.js"></script>
+    <script type="text/javascript" src="./js/Point.js"></script>
+    <script type="text/javascript" src="./js/Color.js"></script>
+    <script type="text/javascript" src="./js/DrawUtils.js"></script>
+
+    <script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec4 vColor;
+
+    void main(void) {
+        gl_FragColor = vColor;
+    }
+    </script>
+
+    <script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec4 aVertexColor;
+
+    uniform mat4 uPMatrix;
+
+    varying vec4 vColor;
+
+    void main(void) {
+        gl_Position = uPMatrix * vec4(aVertexPosition, 1.0);
+        vColor = aVertexColor;
+    }
+    </script>
+
+
+</head>
+
+<body>
+    Checkerboard pattern.
+    <br />
+    <br />
+
+    <canvas id="webgl_canvas" width="500" height="500"></canvas>
+</body>
+<script type="text/javascript" src='./js/main.js'></script>
+</html>
