@@ -1,3 +1,6 @@
+/*
+ *@author shamangeorge
+ */
 var canvas = document.getElementById("checkerboard");
 var context2D = canvas.getContext("2d");
 

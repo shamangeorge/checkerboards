@@ -1,0 +1,52 @@
+<!-- author shamangeorge -->
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>Checkerboard</title>
+		<script type="text/javascript" src="./js/CustomUtils.js"></script>
+		<script type="text/javascript" src="./js/webgl-utils.js"></script>
+		<script type="text/javascript" src="./js/initShaders.js"></script>
+		<script type="text/javascript" src="./js/MV.js"></script>
+		<script type="text/javascript" src="./js/Color.js"></script>
+		<script type="text/javascript" src="./js/Point.js"></script>
+		<script type="text/javascript" src="./js/Rectangle.js"></script>
+		<script type="text/javascript" src="./js/Board.js"></script>
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 vColor;
+			void main(void) {
+			gl_FragColor = vColor;
+			}
+		</script>
+
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec3 aVertexPosition;
+			attribute vec4 aVertexColor;
+			uniform mat4 uPMatrix;
+			varying vec4 vColor;
+			void main(void) {
+			gl_Position = uPMatrix * vec4(aVertexPosition, 1.0);
+			vColor = aVertexColor;
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="./css/main.css"/>
+	</head>
+
+	<body>
+		<section id="game">
+			<canvas id="webgl_canvas" style="border:2px solid black">
+				no canvas support
+			</canvas>
+			<button id="show_solution">
+				Show Solution
+			</button>
+			<button id="show_mistakes">
+				Show Mistakes
+			</button>
+		</section>
+	</body>
+	<script type="text/javascript" src="./js/texture.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+</html>
