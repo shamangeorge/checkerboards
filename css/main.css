@@ -1,0 +1,33 @@
+html, body {
+    font-family:'Balthazar', helvetica, sans-serif;
+    width:100%;
+    min-width: 400px;
+    max-width:600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    /*    color:white;
+    background-color: black;*/
+}
+a {
+    color: black;
+}
+a:hover {
+    color: orange;
+}
+ul {
+    list-style-type: none;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+ul li {
+    border-top: 2px dashed orange;
+    padding:5px;
+}
+ul li p {
+    padding:5px;
+    width:400px;
+    margin-left: auto;
+    margin-right: auto;
+}
